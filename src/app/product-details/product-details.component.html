@@ -1,0 +1,15 @@
+<div *ngIf="product">
+    <h2>{{product.name}}</h2>
+    id: {{product.id}}
+    <br>
+    <label>Name:
+        <input pInputText [(ngModel)]="product.name" placeholder="name" />
+    </label>
+    <label>Category:
+        <select [(ngModel)]="selectedCategory">
+            <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
+        </select>
+    </label>
+</div>
+<button (click)="save()">save</button>
+<button (click)="goBack()">back</button>

@@ -1,0 +1,30 @@
+<h1>Categories</h1>
+<div>
+    <label>Add new category:
+        <input #categoryName />
+    </label>
+    <button (click)="add(categoryName.value); categoryName.value=''">
+        add
+    </button>
+</div>
+<br>
+<p-table [value]="categories" [paginator]="true" [rows]="5" sortField="id" >
+    <ng-template pTemplate="header">
+        <tr>
+            <th width=10%>ID</th>
+            <th width="auto">Name</th>
+            <th width="5%"></th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-category>
+        <tr>
+            <td>{{category.id}}</td>
+            <td>
+                <a routerLink="/categories/{{category.id}}">
+                    {{category.name}}
+                </a>
+            </td>
+            <td><button type="button" title="delete {{category.name}}" (click)=delete(category)>X</button></td>
+        </tr>
+    </ng-template>
+</p-table>

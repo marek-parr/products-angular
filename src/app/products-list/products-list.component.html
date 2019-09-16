@@ -10,7 +10,7 @@
             <option *ngFor="let category of categories" [ngValue]="category">{{category.name}}</option>
         </select>
     </label>
-    <button (click)="add(productToAdd); productToAdd.name=''; selectedCategory=null;">
+    <button (click)="add(productToAdd);">
         add
     </button>
 </div>
@@ -18,10 +18,10 @@
 <p-table [value]="products" [paginator]="true" [rows]="5" sortField="id" >
     <ng-template pTemplate="header">
         <tr>
-            <th width="10%">ID</th>
+            <th class=top>ID</th>
             <th>Name</th>
             <th>Category</th>
-            <th width="5%"></th>
+            <th class=thButton></th>
         </tr>
     </ng-template>
     <ng-template pTemplate="body" let-product>

@@ -1,3 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/primeng/resources/themes/nova-dark/theme.css';
 @import '../node_modules/primeng/resources/primeng.min.css';
+
+.top {
+    width: 10%;
+}
+
+.thButton {
+    width: 5%;
+}

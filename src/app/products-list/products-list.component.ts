@@ -45,6 +45,8 @@ export class ProductsListComponent implements OnInit {
       .subscribe(product => {
         this.products.push(product);
         this.getProducts();
+        this.productToAdd.name='';
+        this.selectedCategory=null;
       });
   }
 

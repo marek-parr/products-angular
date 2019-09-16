@@ -10,6 +10,7 @@ import { Category } from '../category';
 export class CategoriesListComponent implements OnInit {
 
   categories: Category[];
+  newName: String;
 
   constructor(private categoryService: CategoryService) { }
 
@@ -31,6 +32,7 @@ export class CategoriesListComponent implements OnInit {
     this.categoryService.addCategory({ name } as Category)
       .subscribe(category => {
         this.getCategories();
+        this.newName = '';
       });
 
   }
